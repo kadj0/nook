@@ -33,7 +33,7 @@ SELECT
     1,
     44.8,
     2578,
-    2776,
+    2714,
     2974,
     '2026-09-04',
     'A well presented one bedroom apartment on the ground floor of this Georgian conversion moments from Regent''s Park. The property has a good sized reception room with wood flooring, built-in storage, high ceilings and space for both living and dining areas. There is a separate kitchen, double bedroom with storage, and a bathroom off the hallway.
@@ -221,7 +221,7 @@ SELECT
     2,
     69,
     3200,
-    3446,
+    4000,
     3692,
     '2026-09-04',
     'An attractive modern two double bedroom apartment with an open plan kitchen/ living room, a private balcony, ample storage and two bathrooms, one of which is en-suite.
@@ -426,7 +426,7 @@ SELECT
     1,
     70.9,
     2850,
-    3069,
+    3100,
     3288,
     '2026-09-04',
     'Beautiful two bedroom Alberts cottage available for rent through Cantell and Co. The ground floor comprises front reception room and dining area furnished with a comfortable sofa and dining table with chairs. The modern kitchen is fully equipped including dishwasher and washing machine. To the rear, the property benefits from a side lean-to extension, ideal for bike storage and private patio garden, offering excellent outdoor space. Upstairs, there is a good sized master bedroom, second bedroom is flexible accommodation and could be an ideal home office, there is also loft room for additional storage/ occasional guest bedroom. The modern bathroom includes over bath shower and shower screen.
@@ -665,7 +665,7 @@ SELECT
     1,
     40,
     2000,
-    2150,
+    2500,
     2300,
     '2026-09-04',
     'A beautifully presented ground floor, one bedroom Flat situated moments from Putney High Street. This property comprises of a well-appointed kitchen/reception room with ample storage and direct access to a communal garden. The Flat also benefits from a large double bedroom with an integrated wardrobe as well as a modern, good-sized bathroom.
@@ -855,7 +855,7 @@ SELECT
     1,
     55.6,
     2700,
-    2902,
+    2850,
     3105,
     '2026-09-04',
     'Spectacular furnished one bedroom apartment set in Jewel House building in London Square development. The Flat comprises a large open plan living area with dual aspect, double bedroom with built in wardrobes with private balcony, modern bathroom, fully fitted kitchen and a roof terrace with views overlooking the rooftops of London''s skyline. Residents'' will benefit from a 24 hour concierge service and gym. London Square Caledonian Road is located within a short distance to Caledonian Road tube station (Piccadilly line) and Caledonian Road and Barnsbury overground station. King''s Cross St Pancras International is one stop away offering the best transport links nationally and internationally.',
@@ -1058,7 +1058,7 @@ SELECT
     4,
     103,
     2500,
-    2692,
+    3333,
     2884,
     '2026-09-05',
     'Baker and Chase are delighted to present this large 1103 sq ft. split level newly painted 4 bedroom, 1 reception, converted flat located in the heart of Palmers Green, with the added benefit of having 4 bathrooms and your own south facing roof terrace, plus newly fitted carpets throughout.
@@ -1265,7 +1265,7 @@ SELECT
     1,
     84,
     2350,
-    2530,
+    2474,
     2711,
     '2026-09-05',
     'Equity Estate Agents are pleased to offer this spacious three-bedroom split level maisonette situated above commercial premises, presented in fully refurbished condition throughout. The property offers generous living accommodation, including a large lounge, a modern fitted kitchen, three double bedrooms, and a bathroom/WC. Additional benefits include gas central heating and UPVC double glazing, providing a comfortable and practical home for sharers or families.
@@ -1453,7 +1453,7 @@ SELECT
     1,
     76,
     2100,
-    2262,
+    2800,
     2424,
     '2026-09-03',
     'A beautiful two bedroom, first floor property in immaculate condition recently renovated to a high spec. Modern kitchen with integrated appliances as well as a new bathroom suite, neutrally decorated through out. Off street permit parking is available with in the development. Rutland Court is a sought after period mansion block with a strong community feel, located at the top of Denmark Hill, near Ruskin Park. The location is very convenient for Denmark Hill station, Dulwich village, Herne Hill and Kings College hospital. Available immediately and unfurnished.',
@@ -1656,7 +1656,7 @@ SELECT
     1,
     68,
     2200,
-    2367,
+    2444,
     2535,
     '2026-09-01',
     'Spacious two double bedroom furnished apartment with high ceilings located in the gated development Carmine Wharf close to Westferry D.L.R. 3 Minutes to Canary Wharf. The apartment comprises of a spacious reception with fully equipped kitchen with integrated appliances, wooden flooring, floor to ceiling windows leading to the full width South facing balcony. Two large double bedrooms'' spacious hallway and large bathroom.
@@ -1812,7 +1812,7 @@ SELECT
     1,
     51,
     2330,
-    2509,
+    3883,
     2688,
     '2026-09-04',
     'Berkeley Living is proud to present Navigator Place, a place to call home in the heart of Kidbrooke Village, where brand new apartments, great amenity spaces and a dedicated on-site team come together to make everyday living easier.
@@ -1835,7 +1835,7 @@ Apartments are beautifully furnished, with a small selection of unfurnished opti
     'Kidbrooke Station',
     60,
     'N/A',
-    0
+    1200
 WHERE
     NOT EXISTS (
         SELECT 1
