@@ -476,7 +476,6 @@ function Search() {
                       </span>
                       <div className="flex flex-col items-end gap-1 text-xs opacity-70">
                         <span>Posted {postedDaysAgo} days ago</span>
-                        <span>Estimated crime score {listing.metrics.crimeScore}/100</span>
                       </div>
                     </div>
                   </div>
