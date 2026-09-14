@@ -1,0 +1,377 @@
+[
+  {
+    "id": 1,
+    "propertyType": "Flat",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "sizeSqm": 44.8,
+    "pricePerMonth": 2578,
+    "originalPrice": 2776,
+    "deposit": 2974,
+    "listedAt": "2026-09-04",
+    "description": "A well presented one bedroom apartment on the ground floor of this Georgian conversion moments from Regent's Park. The property has a good sized reception room with wood flooring, built-in storage, high ceilings and space for both living and dining areas. There is a separate kitchen, double bedroom with storage, and a bathroom off the hallway.\n\nLocated moments from Regents Park, Marylebone High Street and the West End. Local stations are London Marylebone (Chiltern Railways, Bakerloo) and Baker Street (Bakerloo, Circle and Hammersmith & City, Jubilee, Metropolitan).",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92771880",
+    "media": {
+      "heroImage": "10.jpeg",
+      "galleryImages": [
+        "10.jpeg",
+        "11.jpeg",
+        "12.jpeg",
+        "13.jpeg",
+        "14.jpeg",
+        "15.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 38,
+      "energyRating": "D",
+      "internetSpeedMbps": 1600
+    },
+    "location": {
+      "area": "Marylebone",
+      "street": "Gloucester Place",
+      "borough": "Westminster",
+      "postcode": "NW1"
+    },
+    "nearestStation": "Marylebone Station",
+    "furnished": "Part furnished"
+  },
+  {
+    "id": 2,
+    "propertyType": "Flat",
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "sizeSqm": 69,
+    "pricePerMonth": 3200,
+    "originalPrice": 3446,
+    "deposit": 3692,
+    "listedAt": "2026-09-04",
+    "description": "An attractive modern two double bedroom apartment with an open plan kitchen/ living room, a private balcony, ample storage and two bathrooms, one of which is en-suite.\n\nLant Street is incredibly well located, tucked behind Borough Underground at the foot of Borough High Street, with London Bridge, Borough Market, the Shard and South Bank all within easy walking distance.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92771877",
+    "media": {
+      "heroImage": "20.jpeg",
+      "galleryImages": [
+        "20.jpeg",
+        "21.jpeg",
+        "22.jpeg",
+        "23.jpeg",
+        "24.jpeg",
+        "25.jpeg",
+        "26.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 42,
+      "energyRating": "C",
+      "internetSpeedMbps": 1600
+    },
+    "location": {
+      "area": "London Bridge",
+      "street": "Lant Street",
+      "borough": "Borough Station",
+      "postcode": "SE1"
+    },
+    "nearestStation": "Victoria",
+    "furnished": "Furnished"
+  },
+  {
+    "id": 3,
+    "propertyType": "cottage",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "sizeSqm": 70.9,
+    "pricePerMonth": 2850,
+    "originalPrice": 3069,
+    "deposit": 3288,
+    "listedAt": "2026-09-04",
+    "description": "Beautiful two bedroom Alberts cottage available for rent through Cantell and Co. The ground floor comprises front reception room and dining area furnished with a comfortable sofa and dining table with chairs. The modern kitchen is fully equipped including dishwasher and washing machine. To the rear, the property benefits from a side lean-to extension, ideal for bike storage and private patio garden, offering excellent outdoor space. Upstairs, there is a good sized master bedroom, second bedroom is flexible accommodation and could be an ideal home office, there is also loft room for additional storage/ occasional guest bedroom. The modern bathroom includes over bath shower and shower screen.\n\nThe Alberts are a collection of charming cottages situated on the lower slopes of Richmond Hill. With the Alberts' Deli, a great gastro pub and playground, the annual street party, and the regular community meetings; these cottages, so close to London, are highly sought after. Richmond tube and train station is within a 10-minute walk, with Waterloo 17 minutes and Victoria about 25 minutes on the train. Closer to home there are Kew Gardens and Richmond Park to explore (both a 20 minute walk), plus the riverside pubs, two theatres, an eclectic mix of boutique and High Street shops, bars, restaurants, and a lovely weekend market by the river.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92771823",
+    "media": {
+      "heroImage": "30.jpeg",
+      "galleryImages": [
+        "30.jpeg",
+        "31.jpeg",
+        "32.jpeg",
+        "33.jpeg",
+        "34.jpeg",
+        "35.jpeg",
+        "36.jpeg",
+        "37.jpeg",
+        "38.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 85,
+      "energyRating": "D",
+      "internetSpeedMbps": 5000
+    },
+    "location": {
+      "area": "Richmond",
+      "street": "Albert Road",
+      "borough": "Richmond upon Thames",
+      "postcode": "TW10"
+    },
+    "nearestStation": "Richmond",
+    "furnished": "Unfurnished"
+  },
+  {
+    "id": 4,
+    "propertyType": "Flat",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "sizeSqm": 40,
+    "pricePerMonth": 2000,
+    "originalPrice": 2150,
+    "deposit": 2300,
+    "listedAt": "2026-09-04",
+    "description": "A beautifully presented ground floor, one bedroom Flat situated moments from Putney High Street. This property comprises of a well-appointed kitchen/reception room with ample storage and direct access to a communal garden. The Flat also benefits from a large double bedroom with an integrated wardrobe as well as a modern, good-sized bathroom.\n\nHill Court is a well maintained block set back from Putney Hill. The development is situated close to central Putney, Wandsworth and Wimbledon, with easy bus links and fast access to the A3. Both the Putney mainline station and East Putney underground station are also only a short walk away.\n\nThe information contained in these particulars is for general information purposes only. Douglas & Gordon does not provide information or give any warranty with regards to train, tube, tram lines or flight paths. Prospective purchasers or tenants are advised to carry out their own research if they have any concern about train, tube, tram lines or flight paths.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92763174#",
+    "media": {
+      "heroImage": "40.jpeg",
+      "galleryImages": [
+        "40.jpeg",
+        "41.jpeg",
+        "42.jpeg",
+        "43.jpeg",
+        "44.jpeg",
+        "45.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 74,
+      "energyRating": "D",
+      "internetSpeedMbps": 1600
+    },
+    "location": {
+      "area": "Putney",
+      "street": "Putney Hill",
+      "borough": "Wandsworth",
+      "postcode": "SW15"
+    },
+    "nearestStation": "Putney",
+    "furnished": "Part furnished"
+  },
+  {
+    "id": 5,
+    "propertyType": "Flat",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "sizeSqm": 55.6,
+    "pricePerMonth": 2700,
+    "originalPrice": 2902,
+    "deposit": 3105,
+    "listedAt": "2026-09-04",
+    "description": "Spectacular furnished one bedroom apartment set in Jewel House building in London Square development. The Flat comprises a large open plan living area with dual aspect, double bedroom with built in wardrobes with private balcony, modern bathroom, fully fitted kitchen and a roof terrace with views overlooking the rooftops of London's skyline. Residents' will benefit from a 24 hour concierge service and gym. London Square Caledonian Road is located within a short distance to Caledonian Road tube station (Piccadilly line) and Caledonian Road and Barnsbury overground station. King's Cross St Pancras International is one stop away offering the best transport links nationally and internationally.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92771472#",
+    "media": {
+      "heroImage": "50.jpeg",
+      "galleryImages": [
+        "50.jpeg",
+        "51.jpeg",
+        "52.jpeg",
+        "53.jpeg",
+        "54.jpeg",
+        "55.jpeg",
+        "56.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 48,
+      "energyRating": "N/A",
+      "internetSpeedMbps": 1600
+    },
+    "location": {
+      "area": "Islington",
+      "street": "Sterling Way",
+      "borough": "Islington",
+      "postcode": "N7"
+    },
+    "nearestStation": "Caledonian Road Station",
+    "furnished": "Unfurnished"
+  },
+  {
+    "id": 6,
+    "propertyType": "Flat",
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "sizeSqm": 103,
+    "pricePerMonth": 2500,
+    "originalPrice": 2692,
+    "deposit": 2884,
+    "listedAt": "2026-09-05",
+    "description": "Baker and Chase are delighted to present this large 1103 sq ft. split level newly painted 4 bedroom, 1 reception, converted flat located in the heart of Palmers Green, with the added benefit of having 4 bathrooms and your own south facing roof terrace, plus newly fitted carpets throughout.\n\nSituated on the first and second floors, this property offers 4 good size bedrooms (2 have restricted access from the eaves) , a open plan lounge/fitted kitchen which includes a washing machine, Smeg dishwasher and oven and hob. Two modern family bathrooms both with a bath plus a shower attachment. Plus two en suite shower rooms.\n\nDevonshire Road is a quiet residential turning set in a prime Palmers Green location. Palmers Green overground Train station is on your doorstep, only 0.1 miles away, and there are many bus routes available on Alderman's Hill; allowing easy access into Central London and Hertfordshire. Broomfield Park & Arnos Park provide easy access to some of the areas best open Green spaces. There are several key shopping areas close by, including Palmers Green triangle, Green Lanes and Southgate Circus. Morrison Supermarket is also on your doorstep.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92781309#",
+    "media": {
+      "heroImage": "60.jpeg",
+      "galleryImages": [
+        "60.jpeg",
+        "61.jpeg",
+        "62.jpeg",
+        "63.jpeg",
+        "64.jpeg",
+        "65.jpeg",
+        "66.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 62,
+      "energyRating": "C",
+      "internetSpeedMbps": 1600
+    },
+    "location": {
+      "area": "Palmers Green",
+      "street": "Devonshire Road",
+      "borough": "Enfield",
+      "postcode": "N13"
+    },
+    "nearestStation": "Palmers Green",
+    "furnished": "Furnished"
+  },
+  {
+    "id": 7,
+    "propertyType": "Maisonette",
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "sizeSqm": 84,
+    "pricePerMonth": 2350,
+    "originalPrice": 2530,
+    "deposit": 2711,
+    "listedAt": "2026-09-05",
+    "description": "Equity Estate Agents are pleased to offer this spacious three-bedroom split level maisonette situated above commercial premises, presented in fully refurbished condition throughout. The property offers generous living accommodation, including a large lounge, a modern fitted kitchen, three double bedrooms, and a bathroom/WC. Additional benefits include gas central heating and UPVC double glazing, providing a comfortable and practical home for sharers or families.\n\nThe property is ideally located close to a wide range of local shops, restaurants, and amenities, with excellent transport links nearby including Winchmore Hill, Grange Park, and Southgate stations, offering easy access into Central London. This is a well-connected property in a convenient and vibrant location.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/91887780#",
+    "media": {
+      "heroImage": "70.jpeg",
+      "galleryImages": [
+        "70.jpeg",
+        "71.jpeg",
+        "72.jpeg",
+        "73.jpeg",
+        "74.jpeg",
+        "75.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 56,
+      "energyRating": "D",
+      "internetSpeedMbps": 1130
+    },
+    "location": {
+      "area": "Enfield",
+      "street": "Avenue Parade",
+      "borough": "Enfield",
+      "postcode": "N21"
+    },
+    "nearestStation": "Bush Hill Park",
+    "furnished": "Part furnished"
+  },
+  {
+    "id": 8,
+    "propertyType": "Flat",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "sizeSqm": 76,
+    "pricePerMonth": 2100,
+    "originalPrice": 2262,
+    "deposit": 2424,
+    "listedAt": "2026-09-03",
+    "description": "A beautiful two bedroom, first floor property in immaculate condition recently renovated to a high spec. Modern kitchen with integrated appliances as well as a new bathroom suite, neutrally decorated through out. Off street permit parking is available with in the development. Rutland Court is a sought after period mansion block with a strong community feel, located at the top of Denmark Hill, near Ruskin Park. The location is very convenient for Denmark Hill station, Dulwich village, Herne Hill and Kings College hospital. Available immediately and unfurnished.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92760849",
+    "media": {
+      "heroImage": "80.jpeg",
+      "galleryImages": [
+        "80.jpeg",
+        "81.jpeg",
+        "82.jpeg",
+        "83.jpeg",
+        "84.jpeg",
+        "85.jpeg",
+        "86.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 47,
+      "energyRating": "N/A",
+      "internetSpeedMbps": 900
+    },
+    "location": {
+      "area": "Denmark Hill",
+      "street": "Rutland Court",
+      "borough": "Southwark",
+      "postcode": "W5"
+    },
+    "nearestStation": "Loughborough Junction",
+    "furnished": "Unfurnished"
+  },
+  {
+    "id": 9,
+    "propertyType": "Flat",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "sizeSqm": 68,
+    "pricePerMonth": 2200,
+    "originalPrice": 2367,
+    "deposit": 2535,
+    "listedAt": "2026-09-01",
+    "description": "Spacious two double bedroom furnished apartment with high ceilings located in the gated development Carmine Wharf close to Westferry D.L.R. 3 Minutes to Canary Wharf. The apartment comprises of a spacious reception with fully equipped kitchen with integrated appliances, wooden flooring, floor to ceiling windows leading to the full width South facing balcony. Two large double bedrooms' spacious hallway and large bathroom.\n\nOffered fully furnished and in immaculate condition with the added benefit of a porter Monday - Friday.\n\nCarmine Wharf is ideally located close to supermarkets, restaurants, and bars.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92809998",
+    "media": {
+      "heroImage": "90.jpeg",
+      "galleryImages": [
+        "90.jpeg",
+        "91.jpeg",
+        "92.jpeg",
+        "93.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 42,
+      "energyRating": "C",
+      "internetSpeedMbps": 74
+    },
+    "location": {
+      "area": "Limehouse",
+      "street": "Carmine Wharf",
+      "borough": "Tower Hamlets",
+      "postcode": "E14"
+    },
+    "nearestStation": "Tower Hamlets",
+    "furnished": "Furnished"
+  },
+  {
+    "id": 10,
+    "propertyType": "Flat",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "sizeSqm": 51,
+    "pricePerMonth": 2330,
+    "originalPrice": 2509,
+    "deposit": 2688,
+    "listedAt": "2026-09-04",
+    "description": "Berkeley Living is proud to present Navigator Place, a place to call home in the heart of Kidbrooke Village, where brand new apartments, great amenity spaces and a dedicated on-site team come together to make everyday living easier.\n\nWith prices starting from £2,250 per month, our limited supply of one-bedroom apartments offers beautiful open-plan kitchens with integrated appliances, stylish bathrooms, spacious bedrooms with built-in wardrobes and bright, functional living spaces, making them ideal for individuals or couples alike. All apartments benefit from keyless entry, private outdoor space, and are available in a variety of layouts and sizes.\n\nLiving at Navigator Place means more than simply having a place to stay - it's about having a home and community that supports your day-to-day life. Each apartment has been carefully planned to make the most of space and natural flow, while shared facilities give you the freedom to step outside your front door and enjoy all Navigator Place has to offer. From a residents' lounge, with co-working space, to a well-equipped in-house gym, residents' terrace and regular resident events, there are plenty of opportunities to get to know your neighbours and feel part of the community. Whether you're starting the day with a workout, catching up on emails in the co-working space, or unwinding in the residents' lounge in the evening, the spaces around you are designed to support everyday living.\n\nApartments are beautifully furnished, with a small selection of unfurnished options available. Free Wi-Fi is included for all residents, helping you settle in quickly and stay connected from day one.\n\nWith prices starting from £2,250 per month, our limited supply of one-bedroom apartments offers beautiful open-plan kitchens with integrated appliances, stylish bathrooms, spacious bedrooms with built-in wardrobes and bright, functional living spaces, making them ideal for individuals or couples alike. All apartments benefit from keyless entry, private outdoor space, and are available in a variety of layouts and sizes.\n\nLiving at Navigator Place means more than simply having a place to stay - it's about having a home and community that supports your day-to-day life. Each apartment has been carefully planned to make the most of space and natural flow, while shared facilities give you the freedom to step outside your front door and enjoy all Navigator Place has to offer. From a residents' lounge, with co-working space, to a well-equipped in-house gym, residents' terrace and regular resident events, there are plenty of opportunities to get to know your neighbours and feel part of the community. Whether you're starting the day with a workout, catching up on emails in the co-working space, or unwinding in the residents' lounge in the evening, the spaces around you are designed to support everyday living.\n\nApartments are beautifully furnished, with a small selection of unfurnished options available. Free Wi-Fi is included for all residents, helping you settle in quickly and stay connected from day one.",
+    "sourceUrl": "https://www.rightmove.co.uk/properties/92749203#/?channel=RES_LET",
+    "media": {
+      "heroImage": "100.jpeg",
+      "galleryImages": [
+        "100.jpeg",
+        "101.jpeg",
+        "102.jpeg",
+        "103.jpeg",
+        "104.jpeg",
+        "105.jpeg"
+      ]
+    },
+    "metrics": {
+      "crimeScore": 60,
+      "energyRating": "N/A",
+      "internetSpeedMbps": 0
+    },
+    "location": {
+      "area": "Kidbrooke",
+      "street": "Harler House",
+      "borough": "Greenwich",
+      "postcode": "se3"
+    },
+    "nearestStation": "Kidbrooke Station",
+    "furnished": "Unfurnished"
+  }
+]

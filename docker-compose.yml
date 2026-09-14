@@ -1,19 +1,62 @@
 # Docker Compose configuration for the full stack.
-#
-# This file is intentionally empty: writing it is part of the assessment.
-# See the "Part 2: Containerise the stack" section of README.md for the full
-# list of requirements. Uncomment the keys below and fill them in.
-#
-# services:
-#   db:
-#     # TODO: MySQL 8, credentials from .env, healthcheck, named volume
-#   api:
-#     # TODO: build ./api, wait for db to be healthy, SPRING_DATASOURCE_* env vars
-#   frontend:
-#     # TODO: build ./frontend, VITE_API_PROXY_TARGET pointing at the api service
-#
-# volumes:
-#   # TODO: the named volume that persists the MySQL data
-#
-# networks:
-#   # TODO: the isolated network the services communicate over
+
+services:
+  db:
+    image: mysql:8.4
+    container_name: nook-db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3307:3306"
+    volumes:
+      - nook_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u$${MYSQL_USER} -p$${MYSQL_PASSWORD} --silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    networks:
+      - nook_network
+
+  api:
+    build:
+      context: ./api
+    container_name: nook-api
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/${MYSQL_DATABASE}
+      SPRING_DATASOURCE_USERNAME: ${MYSQL_USER}
+      SPRING_DATASOURCE_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "8080:8080"
+    networks:
+      - nook_network
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: nook-frontend
+    restart: unless-stopped
+    depends_on:
+      - api
+    environment:
+      VITE_API_PROXY_TARGET: http://api:8080
+    ports:
+      - "5173:5173"
+    networks:
+      - nook_network
+
+volumes:
+  nook_mysql_data:
+
+networks:
+  nook_network:
+    driver: bridge

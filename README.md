@@ -1,99 +1,148 @@
-# Full-Stack Starter
+# Nook: Getting Started
 
-A minimal but complete starter repo for the Full Stack Software Development assessment. It contains a React (Vite / TypeScript) frontend calling a Spring Boot REST API, which reads from a MySQL database. It exists to give you a known-good foundation to build your own application on.
+Nook is a rental price tracking platform built for the CBF Full Stack Software Development assessment. It helps London renters browse seeded property listings, compare affordability signals, save homes to a watchlist, and keep private notes against individual listings while they decide what is worth pursuing.
 
-To get started, you can run the application directly on your own machine. Containerising the stack is part of the assessment, so writing a Dockerfile for the API, another for the frontend, and the Compose file that runs them together is your task.
+The project demonstrates a full-stack data flow: the React and TypeScript frontend fetches listing, watchlist and note data from a Java Spring Boot REST API, and the API persists application data in MySQL. The database is seeded with London rental listings so reviewers can run the app and immediately test search, saved listings, listing detail pages, notes, and the rent calculator.
 
-**The assessment brief lives in [ASSESSMENT.md](ASSESSMENT.md).** Read it before you start building.
+For more detail on architecture and design decisions, see the [system design document](docs/SDD.md).
 
 ---
 
 ## Project Structure
 
 ```text
-fsd-project/
-├── api/                            # Spring Boot (Java 21) backend
-│   ├── src/
-│   │   └── main/
-│   │       └── resources/
-│   │           ├── application.properties
-│   │           ├── schema.sql              # Database schema (DDL)
-│   │           └── data.sql                # Seed data (DML)
-│   ├── local.properties.example    # Template for your local DB credentials
-│   └── pom.xml
-├── frontend/                       # React (Vite / TypeScript) frontend
-│   ├── src/
+nook/
+├── api/
+│   ├── Dockerfile
+│   ├── pom.xml
+│   └── src/
+│       ├── main/
+│       │   ├── java/com/nook/api/
+│       │   │   ├── controller/
+│       │   │   ├── dto/
+│       │   │   ├── exception/        # Central API error handling
+│       │   │   ├── model/
+│       │   │   ├── repository/
+│       │   │   ├── service/
+│       │   │   └── ApiApplication.java
+│       │   └── resources/
+│       │       ├── application.properties
+│       │       ├── schema.sql        # Database schema
+│       │       └── data.sql          # Seed data
+│       └── test/
+├── frontend/
+│   ├── Dockerfile
 │   ├── package.json
-│   └── vite.config.ts
-├── .env.example                    # Template for Docker Compose variables
-└── ASSESSMENT.md                   # The assessment brief
+│   ├── vite.config.ts
+│   └── src/
+│       ├── assets/
+│       │   ├── houses/
+│       │   └── svgs/
+│       ├── components/
+│       ├── data/
+│       ├── pages/
+│       ├── styles/
+│       ├── types/
+│       ├── utils/
+│       ├── App.tsx
+│       └── main.tsx
+├── docs/
+│   ├── SDD.md                        # System design document
+│   └── assets/
+│       ├── diagrams/
+│       └── images/
+├── docker-compose.yml                # Frontend, API and MySQL orchestration
+├── .env                              # Docker Compose environment variables
+├── ASSESSMENT.md
+└── README.md
 ```
 
 ---
 
 ## Prerequisites
 
-For Part 1 (running locally):
-
-- [JDK 21](https://adoptium.net/) — the API targets Java 21
-- [Node.js 22+](https://nodejs.org/)
-- [MySQL 8](https://dev.mysql.com/downloads/mysql/) running on your machine
-- [Git](https://git-scm.com/)
-
-For Part 2 (containerising):
+To run with Docker:
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
+To run locally without Docker:
+
+- JDK 21
+- Node.js 22+
+- MySQL 8
+- Git
+
 ---
 
-## Part 1: Run the Starter Locally
+## Run With Docker
 
-### 1. Create the database
+### 1. Check `.env`
 
-Connect to your local MySQL server and create an empty database:
+The project uses a root `.env` file for Docker Compose variables:
 
-```sql
-CREATE DATABASE fsd_project;
+```env
+MYSQL_ROOT_PASSWORD=root_password
+MYSQL_DATABASE=nook
+MYSQL_USER=nook_user
+MYSQL_PASSWORD=user_password
 ```
 
-You do not need to create any tables. The API creates them from `schema.sql` on startup.
+These values are read by `docker-compose.yml` and passed into the MySQL and Spring Boot containers. The API receives database settings through `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD`.
 
-### 2. Configure your database credentials
+### 2. Start the stack
 
-Your credentials live in `api/local.properties`, which is gitignored so it can never be committed. Create it from the template:
+From the project root:
+
+```bash
+docker compose up --build
+```
+
+Docker Compose starts:
+
+- `db` on host port `3307`
+- `api` on host port `8080`
+- `frontend` on host port `5173`
+
+### 3. Open the app
+
+- Frontend: http://localhost:5173
+- Listings API: http://localhost:8080/api/listings
+- Swagger UI: http://localhost:8080/swagger-ui/index.html
+
+---
+
+## Run Locally Without Docker
+
+Use this if you want to run each service directly on your machine.
+
+### 1. Start MySQL
+
+Make sure your local MySQL server is running and that the existing `nook` database is available. Then configure `api/local.properties` with your local credentials:
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/nook
+spring.datasource.username=nook_user
+spring.datasource.password=your_password
+```
+
+`api/local.properties` is intentionally gitignored.
+
+### 2. Start the API
 
 ```bash
 cd api
-cp local.properties.example local.properties
-```
-
-Open `api/local.properties` and set the values to match your MySQL installation:
-
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/fsd_project
-spring.datasource.username=your_local_mysql_user
-spring.datasource.password=your_local_mysql_password
-```
-
-> **Never put real credentials in `application.properties`.** That file is tracked by Git, so anything you write there ends up on GitHub. Keeping secrets out of your properties files is also a graded requirement of the assessment.
-
-### 3. Start the API
-
-From the `api` directory:
-
-```bash
 ./mvnw spring-boot:run
 ```
 
-Wait for `Started ApiApplication`. You can check it directly:
+Check the API:
 
 ```bash
-curl http://localhost:8080/api/greeting
+curl http://localhost:8080/api/listings
 ```
 
-### 4. Start the frontend
+### 3. Start the frontend
 
-In a second terminal, from the `frontend` directory:
+In a second terminal:
 
 ```bash
 cd frontend
@@ -101,187 +150,130 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:5173**. You should see the seeded greeting from the database rendered on the page.
-
-The frontend fetches the relative path `/api/greeting`. Vite's dev server proxies anything starting with `/api` to the backend, which is why the frontend never needs to know the API's absolute address. That proxy is configured in `frontend/vite.config.ts`.
+Open http://localhost:5173.
 
 ---
 
-## Database & Schema Management
+## Useful Commands
 
-Two SQL files under `api/src/main/resources` control the database:
-
-- **`schema.sql`** — table definitions (DDL), such as `CREATE TABLE IF NOT EXISTS greetings ...`
-- **`data.sql`** — seed data (DML) inserted on startup
-
-Because `application.properties` sets `spring.sql.init.mode=always`, **both scripts run on every single startup**, not just the first one. Your local MySQL keeps its data between restarts, so any plain `INSERT` in `data.sql` would add a duplicate row each time you start the API.
-
-This is why the seeded insert only runs when the table is empty:
-
-```sql
-INSERT INTO greetings (message)
-SELECT 'Hello World from Spring Boot Seed!'
-WHERE NOT EXISTS (SELECT 1 FROM greetings);
-```
-
-Write your own seed data so that re-running it is harmless.
-
-### Querying the database directly
-
-Running locally:
+Build the frontend:
 
 ```bash
-mysql -u your_local_mysql_user -p
+cd frontend
+npm run build
 ```
 
-Once you have containerised the stack, the same client is available inside the running database container:
+Package the API without tests:
 
 ```bash
-docker compose exec db mysql -u your_mysql_user -p
+cd api
+./mvnw -DskipTests package
 ```
 
-Then, in either case:
-
-```sql
-USE fsd_project;
-SELECT * FROM greetings;
-```
-
----
-
-## Part 2: Containerise the Stack
-
-This part is assessed. See the Containerisation section of [ASSESSMENT.md](ASSESSMENT.md) for the marking criteria.
-
-### 1. Configure the environment variables
-
-Duplicate the template and fill it in with credentials of your choosing:
+Validate Docker Compose configuration:
 
 ```bash
-cp .env.example .env
+docker compose config
 ```
 
-```bash
-MYSQL_ROOT_PASSWORD=your_secure_root_password
-MYSQL_DATABASE=a_database_name
-MYSQL_USER=a_database_user
-MYSQL_PASSWORD=your_user_password
-```
-
-`.env` is read by Docker Compose only. It has no effect on the local run in Part 1, which reads `api/local.properties` instead.
-
-### 2. Write the Dockerfiles
-
-Neither application ships with a Dockerfile, so you must add your own.
-
-#### `api/Dockerfile`
-
-- Use a multi-stage build.
-- The API targets Java 21, so pick base images to match.
-- `pom.xml` sets no `<finalName>` by default, so the jar is named after the artifact and version (`api-0.0.1-SNAPSHOT.jar`). You should either copy it with a wildcard to keep the Dockerfile working when the version changes, or set the `<finalName>` value explicitly.
-- Run the application as a non-root user rather than as `root`.
-- The app listens on port 8080.
-
-#### `frontend/Dockerfile`
-
-- Ensure the project's dependencies are installed exclusively from the lock file.
-- Use a start command that binds to all interfaces.
-- The app listens on port 5173.
-- Get the Vite dev server working before attempting the Nginx build for Stretch Goal A in [ASSESSMENT.md](ASSESSMENT.md).
-
-### 3. Write `docker-compose.yml`
-
-Add a Composer file in the project root. Your configuration must orchestrate three services:
-
-**`db`**
-
-- Uses a versioned `mysql` image
-- Takes its credentials from the four variables in `.env`
-- Persists its data in a named volume, so records survive a restart
-- Declares a healthcheck so other services can wait for it to be ready
-
-> **Watch out:** while MySQL sets itself up for the first time it runs a temporary internal server that accepts connections over a local socket but is not yet listening on port 3306. A healthcheck that talks to `localhost` will therefore report "healthy" too early, your API will start, and it will fail with `Connection refused`. Make sure your healthcheck tests a real network connection.
-
-**`api`**
-
-- Builds from `./api`.
-- Waits for `db` to report healthy before starting.
-- Receives `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` as environment variables, derived from your `.env` values. 
-- Sets the correct host name in the service name.
-- Exposes port `8080`
-
-**`frontend`**
-
-- Builds from `./frontend`.
-- Sets the correct host name for `VITE_API_PROXY_TARGET` so the Vite proxy targets the API container.
-- Exposes port `5173`.
-
-You also need a **named volume** for the MySQL data and a **named network** that all three services join, so they can reach each other by service name in isolation from other containers.
-
-Nothing in the application code needs to change. The `SPRING_DATASOURCE_*` environment variables automatically override the values in `api/local.properties`, because [Spring Boot grants environment variables higher precedence than configuration files](https://docs.spring.io/spring-boot/reference/features/external-config.html).
-
-### 4. Launch the stack
-
-```bash
-docker compose up --build
-```
-
-Docker coordinates the startup: the database initialises, the API waits for it to become healthy before connecting, and the frontend starts last.
-
----
-
-## Accessing the Services
-
-| Service     | Local (Part 1)                     | Docker (Part 2)                                |
-| ----------- | ---------------------------------- | ---------------------------------------------- |
-| Frontend UI | http://localhost:5173              | http://localhost:5173                          |
-| Backend API | http://localhost:8080/api/greeting | http://localhost:8080/api/greeting             |
-| Database    | localhost:3306                     | inside the Docker network, as the `db` service |
-
-Only one program can listen on a given port at a time, so stop your local MySQL before publishing the database container on port 3306, or map it to a spare host port such as `3307:3306`. The API container does not need that mapping either way, because it reaches the database over the Docker network.
-
----
-
-## Stopping and Resetting
-
-Stop the containers while keeping your database records:
+Stop Docker containers:
 
 ```bash
 docker compose down
 ```
 
-Delete the containers **and** the stored data:
+Stop Docker containers and delete the MySQL volume:
 
 ```bash
 docker compose down -v
 ```
 
-The `-v` flag removes the named volume holding the MySQL data. You need this whenever you change your `.env` credentials, because MySQL only creates its users and database the first time it starts against an empty data directory. Changing `.env` alone will not update an already-initialised volume.
+Use `docker compose down -v` when you change `.env` credentials or want to reseed the database from scratch.
+
+---
+
+## Database and Seed Data
+
+The backend uses SQL files in `api/src/main/resources`:
+
+- `schema.sql` defines the database tables.
+- `data.sql` inserts starter listing data.
+
+`spring.sql.init.mode=always` means these scripts run on every API startup. Seed inserts are written to avoid duplicating existing records.
+
+To inspect the Docker database:
+
+```bash
+docker compose exec db mysql -u nook_user -p
+```
+
+Then:
+
+```sql
+USE nook;
+SELECT * FROM listings;
+SELECT * FROM watchlist_items;
+SELECT * FROM listing_notes;
+```
+
+---
+
+## API Documentation
+
+Swagger UI is available when the API is running: http://localhost:8080/swagger-ui/index.html
+
+Key endpoints:
+
+| Method | Endpoint | Description |
+| --- | --- | --- |
+| `GET` | `/api/listings` | Fetch all listings |
+| `GET` | `/api/listings/{id}` | Fetch one listing |
+| `GET` | `/api/watchlist` | Fetch saved watchlist items |
+| `GET` | `/api/watchlist/ids` | Fetch saved listing IDs |
+| `POST` | `/api/watchlist` | Save a listing |
+| `DELETE` | `/api/watchlist/{listingId}` | Remove a listing from the watchlist |
+| `GET` | `/api/listings/{listingId}/notes` | Fetch notes for a listing |
+| `POST` | `/api/listing-notes` | Save a note for a listing |
+
+Example note request:
+
+```json
+{
+  "listingId": 1,
+  "userReference": "demo-user",
+  "note": "Ask agent about council tax and broadband."
+}
+```
+
+Notes are validated by the backend: 
+- `listingId` is required
+- `note` must not be blank or longer than 1000 characters
 
 ---
 
 ## Troubleshooting
 
-**`Failed to configure a DataSource: 'url' attribute is not specified`**
+**The API cannot connect to MySQL**
 
-The API cannot find your database settings. You most likely have not created `api/local.properties` yet — see Part 1, step 2.
+Check that the database is running and that `.env` or `api/local.properties` contains the correct credentials.
 
-**The API starts but cannot find `local.properties`**
+**Docker still uses old database credentials**
 
-That file is located relative to the directory you run the API from, so run `./mvnw spring-boot:run` from inside `api/`. If you launch the app from your IDE instead, set the run configuration's working directory to the `api` folder.
+MySQL stores credentials in its first-created data volume. Reset the volume:
 
-**`Access denied for user ... (using password: NO)`**
+```bash
+docker compose down -v
+docker compose up --build
+```
 
-Your username or password is empty or wrong. If the username in the error is not one you recognise, the MySQL driver has fallen back to your operating system account, which means it received no username at all.
+**Code changes do not appear in Docker**
 
-**`./mvnw test` fails**
-
-`ApiApplicationTests` starts the entire Spring context, including the database connection, so MySQL must be running and `local.properties` must be configured before the tests will pass.
-
-**Code changes do not appear in a running container**
-
-Docker Compose does not rebuild an image just because you edited a file. After changing anything under `api/src`, rebuild:
+Rebuild the images:
 
 ```bash
 docker compose up --build
 ```
+
+**Port already in use**
+
+Stop any local services using ports `5173`, `8080` or `3307`, or change the published port in `docker-compose.yml`.
