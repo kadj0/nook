@@ -341,7 +341,8 @@ export function ListingTemplate() {
                       <div className="font-semibold">Nearest station</div>
                       <div className="font-light">{listing.nearestStation}</div>
                     </div>
-                    <div className="flex border-b border-gray-200 py-4">
+                    <div className="flex justify-between border-b border-gray-200 py-4">
+                      <div className="font-semibold">Estimated crime score</div>
                       <div className="font-light">
                         {listing.metrics.crimeScore}/100
                       </div>
