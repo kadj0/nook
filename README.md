@@ -76,9 +76,15 @@ To run locally without Docker:
 
 ## Run With Docker
 
-### 1. Check `.env`
+### 1. Create `.env`
 
-The project uses a root `.env` file for Docker Compose variables:
+The project uses a root `.env` file for Docker Compose variables. This file is intentionally not committed, so create it in the project root before starting Docker:
+
+```bash
+touch .env
+```
+
+Add the following values:
 
 ```env
 MYSQL_ROOT_PASSWORD=root_password
@@ -87,7 +93,7 @@ MYSQL_USER=nook_user
 MYSQL_PASSWORD=user_password
 ```
 
-These values are read by `docker-compose.yml` and passed into the MySQL and Spring Boot containers. The API receives database settings through `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD`.
+You can change the password values if needed, but keep `MYSQL_DATABASE=nook` unless you also update the database URL. These values are read by `docker-compose.yml` and passed into the MySQL and Spring Boot containers. The API receives database settings through `SPRING_DATASOURCE_URL`, `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD`.
 
 ### 2. Start the stack
 
