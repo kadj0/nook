@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { navigateTo } from "../utils/Constants.js";
-import "../styles/stylesheet.css";
 import externalLinkIcon from "../assets/svgs/external-link.svg";
 
 export default function Footer() {

@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { navigateTo } from "../utils/Constants";
 import hero from "../assets/nook_hero.jpg";
-import "../styles/stylesheet.css";
 
 export default function Home() {
   return (
