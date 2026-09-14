@@ -223,12 +223,12 @@ export function ListingTemplate() {
                   type="button"
                   key={`${imageName}=${index}`}
                   onClick={() => setActiveImageIndex(index)}
-                  className={`min-h-0 flex-1 overflow-hidden rounded-sm border transition hover:cursor-pointer ${index === activeImageIndex ? "border-[#3F4A36]" : "border-transparent"}`}
+                  className="min-h-0 flex-1 overflow-hidden rounded-sm border transition hover:cursor-pointer"
                 >
                   <img
                     src={images[`../assets/houses/${imageName}`]}
                     alt={`${listing.location.postcode} thumbnail ${index + 1}`}
-                    className="h-full w-full object-cover rounded-sm"
+                    className={`h-full w-full object-cover rounded-sm ${index === activeImageIndex ? "opacity-100" : "opacity-80"} hover:opacity-100 transition`}
                   />
                 </button>
               ))}
@@ -372,7 +372,7 @@ export function ListingTemplate() {
                           Nook score
                         </div>
                         <div className="flex items-end gap-3">
-                          <span className="text-[clamp(3.75rem,7vw,5rem)] font-extrabold leading-[0.85] tracking-normal text-black">
+                          <span className="text-[#3F4A36] text-[clamp(3.75rem,7vw,5rem)] font-extrabold leading-[0.85] tracking-normal">
                             {nookScore}
                           </span>
                           <span className="pb-1.5 text-[1.25rem] font-medium text-black">
@@ -402,14 +402,7 @@ export function ListingTemplate() {
                         </div>
                       </div>
                       <form onSubmit={handleNoteSubmit} className="pt-5">
-                        <div className="flex items-center justify-between gap-3">
-                          <div className="font-bold">Notes</div>
-                          {isNoteSaved ? (
-                            <div className="text-[0.72rem] font-semibold text-[#3F4A36]">
-                              Saved
-                            </div>
-                          ) : null}
-                        </div>
+                        <div className="font-bold">Notes</div>
                         <div className="mt-1 mb-3 leading-5 font-light text-gray-600">
                           Add a private note for this listing. Saved notes stay
                           visible in this box.
@@ -425,12 +418,21 @@ export function ListingTemplate() {
                           className="h-[150px] w-full resize-none rounded-sm border border-gray-200 bg-[#fbf7f5] px-2 py-1 transition hover:border-black focus:border-[#3F4A36] focus:outline-none"
                           placeholder="Add notes about this listing..."
                         />
-                        <div className="mt-1 flex items-center justify-between gap-3">
-                          {noteError ? (
-                            <p className="text-sm text-red-700">{noteError}</p>
-                          ) : (
-                            <span />
-                          )}
+                        <div className="flex items-center justify-between mt-1 gap-3">
+                          <div>
+                            {isNoteSaved ? (
+                              <div className="text-[0.72rem] font-semibold text-[#3F4A36]">
+                                Saved
+                              </div>
+                            ) : null}
+                            {noteError ? (
+                              <p className="text-sm text-red-700">
+                                {noteError}
+                              </p>
+                            ) : (
+                              <span />
+                            )}
+                          </div>
                           <span className="text-xs text-gray-400">
                             {note.length}/1000
                           </span>
